@@ -7,14 +7,14 @@ const Navbar = () => {
   const [visible, setVisible] = useState(false);
   const links = [
     { to: '/', label: 'HOME' },
-    { to: '/collection', label: 'COLLECTION' },
-    { to: '/about', label: 'ABOUT' },
-    { to: '/contact', label: 'CONTACT' },
+    { to: '/collection', label: 'PRODUTOS' },
+    { to: '/about', label: 'SOBRE NÓS' },
+    { to: '/contact', label: 'CONTATO' },
   ];
 
   return (
-    <div className='flex items-center justify-between py-5 font-medium'>
-      <img src={assets.logo} className='w-36' alt='Logo' />
+    <div className='flex items-center justify-between py-2 font-medium'>
+      <img src={assets.logo} className='w-24 ml-5' alt='Logo' />
       <ul className='hidden sm:flex gap-5 text-sm text-gray-700'>
         {links.map(({ to, label }) => (
           <NavLink
@@ -56,10 +56,20 @@ const Navbar = () => {
           <img onClick={()=>setVisible(true)} src={assets.menu_icon} className='w-5 cursor-pointer sm:hidden' alt="menu"/>
       </div>
       {/* Sidebar Responsiva */}
-      <div className={`absolute top-0 right-0 bottom-0 overflow-hidden bg-white transition-all ${visible ? 'w-full' : 'w-0'}`}></div>
+      <div className={`absolute top-0 right-0 bottom-0 overflow-hidden bg-white transition-all ${visible ? 'w-full' : 'w-0'}`}>
+        <div className='flex flex-col text-gray-600'>
+          <div onClick={()=>setVisible(false)} className="flex items-center gap-4 p3">
+          <img src={assets.dropdown_icon} alt="dropdown_icon" className={`h-4 transition-transform duration-300 ${visible ? 'rotate-180' : 'rotate-0'}`}/>
+           <p>Voltar</p>
+          </div>
+          <NavLink onClick={()=>setVisible(false)} className='py-2 pl6 border' to='/'>HOME</NavLink>
+          <NavLink onClick={()=>setVisible(false)} className='py-2 pl6 border' to='/collection'>PRODUTOS</NavLink>
+          <NavLink onClick={()=>setVisible(false)} className='py-2 pl6 border' to='/about'>SOBRE NÓS</NavLink>
+          <NavLink onClick={()=>setVisible(false)} className='py-2 pl6 border' to='/contact'>CONTATO</NavLink>
+        </div>
+      </div>
     </div>
   );
 };
-
 
 export default Navbar
