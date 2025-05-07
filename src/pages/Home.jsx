@@ -1,18 +1,12 @@
-// import React from 'react'
+import React from 'react'
+import Hero from '../components/Hero'
 
-// const Home = () => {
-//   return (
-//     <div>Home</div>
-//   )
-// }
-
-// export default Home
-
-// src/pages/Page1.jsx
-export default function Page1() {
+function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-r from-blue-500 to-teal-500 flex items-center justify-center">
-      <h1 className="text-white text-4xl font-bold">Página 1 - Gradiente Azul</h1>
+    <div>
+      <Hero />
     </div>
-  );
+  )
 }
+
+export default Home
