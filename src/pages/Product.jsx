@@ -32,10 +32,10 @@ const Product = () => {
 
           {/* Imagens do Produto */}
           <div className='flex-1 flex flex-col-reverse gap-3 sm:flex-row '>
-            <div className='flex sm:flex-col overflow-x-auto sm:overflow-y-scroll justify-between sm:justify-normal sm:w-[18.7%] w-full'>
+            <div className='flex sm:flex-col overflow-x-auto sm:overflow-y-scroll justify-between sm:justify-normal sm:w-[18.4%] w-full'>
                 {
                   productData.image.map((item,index)=>(
-                    <img onClick={()=>setImage(item)} src={item} key={index} className='w-[24%] sm:w-full sm:mb-3 flex-shrink-0 cursor-pointer ' />
+                    <img onClick={()=>setImage(item)} src={item} key={index} className='w-[25%] sm:w-full sm:mb-3 flex-shrink-0 cursor-pointer ' />
                   ))
                 }
             </div>
@@ -68,12 +68,29 @@ const Product = () => {
            <button className='bg-black text-white px-8 py-3 text-sm active:bg-gray-700'>Adicione ao Carrinho</button>
            <hr className='mt-8 sm:4/5'/>
            <div className='text-sm text-gray-500 mt-5 flex flex-col gap-1'>
-              <p>Lorem ipsum dolor sit amet.</p>
-              <p>Lorem ipsum dolor sit amet consectetur.</p>
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing.</p>
+              <p>[Detalhe do produto 1] Lorem ipsum dolor sit amet.</p>
+              <p>[Detalhe do produto 2] Lorem ipsum dolor sit amet consectetur.</p>
+              <p>[Detalhe do produto 3] Lorem ipsum, dolor sit amet consectetur adipisicing.</p>
            </div>
         </div>
       </div>
+
+      {/* Descrições e Review */}
+      <div className="mt-20">
+        <div className="flex">
+          <b className='border px-5 py-3 text-sm'>Descrição</b>
+          <p className='border px-5 py-3 text-sm'>Avaliações(122)</p>
+        </div>
+        <div className='flex flex-col gap-4 border px-6 py-6 text-sm text-gray-500'>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum quis repudiandae repellendus sequi itaque dolorum obcaecati molestiae alias! Reprehenderit praesentium optio cum reiciendis enim doloremque.</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum quis tempore natus, impedit commodi nam iste incidunt, facilis hic nostrum delectus corporis? Porro voluptatem animi iste excepturi, sunt reiciendis distinctio!</p>
+        </div>
+      </div>
+
+      {/*Produtos Relacionados*/}
+
+      
+
     </div>
   ) : <div className='opacity-0'></div>
 }
